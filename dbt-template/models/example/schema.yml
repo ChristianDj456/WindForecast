@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: Proyect
+    database: clase09082023
+    tables:
+      - name: Vwinds22Complete
+        description: Velocidad del Viento año 2022
