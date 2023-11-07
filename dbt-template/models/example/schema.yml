@@ -1,8 +1,10 @@
 version: 2
 
 sources:
-  - name: Proyect
-    database: clase09082023
+  - name: WindForecast
+    database: proyectofinal-404315
     tables:
-      - name: Vwinds22Complete
-        description: Velocidad del Viento año 2022
+      - name: WindSpeed_EXT
+        description: Velocidad del Viento años 2021, 2022, 2023
+      - name: WindsDirect_EXT
+        description: Dirección del Viento años 2021, 2022, 2023
