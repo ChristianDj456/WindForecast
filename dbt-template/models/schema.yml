@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: WindsForecast
+    database: proyectofinal-404415
+    tables:
+      - name: WindSpeed_EXT
+        description: Tabla con la informacion sobre la velocidad del viento
+      - name: WindsDirect_EXT 
+        description: Tabla Tabla con la informacion sobre la dirección del viento
