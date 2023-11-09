@@ -1,5 +1,3 @@
-{{ config(materialized='table') }}
-
 WITH temporal AS (
   SELECT 
     FechaObservacion,
