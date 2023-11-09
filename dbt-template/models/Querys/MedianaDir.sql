@@ -1,4 +1,3 @@
-{{ config(materialized='table') }}
 
 WITH MedianaCalc AS (
   SELECT APPROX_QUANTILES(PromedioDir, 2)[OFFSET(1)] AS Mediana
