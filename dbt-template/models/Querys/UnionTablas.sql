@@ -1,6 +1,7 @@
-SELECT
-  v.*,
-  d.PromedioDir AS ValorObservadoDireccion
-FROM
-  {{ ref('MedianaVel') }} AS v,
-  {{ ref('MedianaDir') }} AS d
+{{ config(materialized='table') }}
+
+SELECT speed_clean.* EXCEPT(Velocidad), Velocidad, Direccion 
+FROM {{ ref('WindSpeedClean') }} speed_clean
+INNER JOIN {{ ref('WindsDirectClean') }} direction_clean
+USING(Fecha, Codigo)
+ORDER BY Fecha, Codigo

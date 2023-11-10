@@ -2,13 +2,11 @@ WITH temporal AS (
   SELECT 
     FechaObservacion,
     CodigoEstacion AS Codigo,
-    CodigoSensor,
     ValorObservado AS DirViento,
     UPPER(Departamento) AS Departamento,
     UPPER(Municipio) AS Municipio,
     NombreEstacion,
     ZonaHidrografica,
-    DescripcionSensor,
     Latitud,
     Longitud
   FROM {{ ref('WindsDirect') }}
