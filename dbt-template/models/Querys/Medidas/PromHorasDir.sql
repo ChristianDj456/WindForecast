@@ -1,3 +1,4 @@
+{{ config(materialized='table') }}
 SELECT DISTINCT
   Codigo,
   DATETIME(DATE(FechaObservacion), TIME(EXTRACT(HOUR FROM FechaObservacion),0,0)) AS Fecha,

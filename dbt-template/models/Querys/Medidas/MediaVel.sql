@@ -1,9 +1,10 @@
+{{ config(materialized='table') }}
 WITH MediaCalc AS (
   SELECT AVG(PromedioVel) AS Media
   FROM {{ ref('PromByHours') }}
 )
 
-SELECT 
+SELECT  DISTINCT
   pc.*,
   mc.Media AS Media
 FROM 

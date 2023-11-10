@@ -1,9 +1,10 @@
+{{ config(materialized='table') }}
 WITH MediaCalc AS (
   SELECT AVG(PromedioDir) AS Media
   FROM {{ ref('PromHorasDir') }}
 )
 
-SELECT 
+SELECT DISTINCT
   pc.*,
   mc.Media AS Media
 FROM 
