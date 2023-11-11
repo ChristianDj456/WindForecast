@@ -3,7 +3,7 @@ SELECT DISTINCT
   Codigo,
   DATETIME(DATE(FechaObservacion), TIME(EXTRACT(HOUR FROM FechaObservacion),0,0)) AS Fecha,
   EXTRACT(HOUR FROM FechaObservacion) AS Hora,
-  AVG(DirViento) OVER(PARTITION BY  DATETIME(DATE(FechaObservacion), TIME(EXTRACT(HOUR FROM FechaObservacion),0,0))) AS PromedioDir,
+  AVG(DirViento) OVER(PARTITION BY  DATETIME(DATE(FechaObservacion), TIME(EXTRACT(HOUR FROM FechaObservacion),0,0)), Codigo) AS PromedioDir,
   NombreEstacion,
   Departamento,
   Municipio,
