@@ -1,3 +1,4 @@
+{{ config(materialized='ephemeral')}}
 WITH temporal AS (
   SELECT 
     FechaObservacion,

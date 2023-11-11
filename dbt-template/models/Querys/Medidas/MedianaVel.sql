@@ -1,5 +1,4 @@
-
-
+{{ config(materialized='view')}}
 WITH MedianaCalc AS (
   SELECT APPROX_QUANTILES(PromedioVel, 2)[OFFSET(1)] AS Mediana
   FROM {{ ref('MediaVel') }}

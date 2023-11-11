@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='ephemeral')}}
 WITH MediaCalc AS (
   SELECT AVG(PromedioDir) AS Media
   FROM {{ ref('PromHorasDir') }}
