@@ -1,11 +1,11 @@
 {{ config(materialized='view') }}
-SELECT DISTINCT Departamento,
-  COUNT(Codigo) AS Cantidad_Estaciones,
-  AVG(Velocidad) AS Media_Velocidad,
-  APPROX_QUANTILES(Velocidad, 2)[OFFSET(1)] AS Mediana_Velocidad
+  SELECT Departamento,
+  COUNT(DISTINCT Codigo) AS CantidadEstaciones,
+  AVG(Velocidad) AS MediaVelocidad,
+  APPROX_QUANTILES(Velocidad, 2)[OFFSET(1)] AS MedianaVelocidad,
+  AVG(Direccion) AS MediaDireccion,
+  APPROX_QUANTILES(Direccion, 2)[OFFSET(1)] AS MedianaDireccion
 FROM
   {{ ref('WindsComplete') }}
 GROUP BY
-  Codigo, Departamento
-  ORDER BY
-  Departamento
+Departamento
