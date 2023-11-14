@@ -14,7 +14,7 @@ WITH temporal AS (
     Longitud
   FROM {{ref('NameRegionesDir')}}
 )
-
+-- Se crea la columna Region en la tabla de Dirección del viento, agrupando sus respectivos Departamentos
 SELECT 
   FechaObservacion AS FechaObservacion, 
   * EXCEPT(FechaObservacion, Latitud, Longitud),

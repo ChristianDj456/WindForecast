@@ -12,7 +12,7 @@ WITH temporal AS (
     Longitud
   FROM {{ ref('WindsDirect') }}
 )
-
+-- Se renombran los departamentos iguales, pero que tienen nombres distintos en la tabla de Dirección del viento
 SELECT 
   FechaObservacion AS FechaObservacion, 
   EXTRACT(HOUR FROM FechaObservacion) AS Hora,

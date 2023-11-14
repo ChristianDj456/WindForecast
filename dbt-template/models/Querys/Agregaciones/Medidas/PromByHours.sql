@@ -1,4 +1,6 @@
 {{ config(materialized='ephemeral') }}
+-- Se realiza un promedio por horas del valor observado de la Velocidad del viento para reducir el numero de datos,
+-- asi como la latitud y longitud
 SELECT DISTINCT
   Codigo,
   DATETIME(DATE(FechaObservacion), TIME(EXTRACT(HOUR FROM FechaObservacion),0,0)) AS Fecha,

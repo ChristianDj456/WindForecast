@@ -14,7 +14,7 @@ WITH temporal AS (
     Longitud
   FROM {{ ref('NameRegiones') }}
 )
-
+-- Se crea la columna Region en la tabla de Velocidad del viento, agrupando sus respectivos Departamentos
 SELECT 
   FechaObservacion AS FechaObservacion, 
   * EXCEPT(FechaObservacion, Latitud, Longitud),
