@@ -55,7 +55,6 @@ WITH tabla AS (
 ), datos_atipicos AS (
   SELECT *
   FROM promedio_hora
-  WHERE Municipio NOT IN ("BELLO", "PUERTO GAITAN", "AYAPEL", "PEREIRA", "PURACE (COCONUCO)") AND Direccion > 0
 )
 
 SELECT *
